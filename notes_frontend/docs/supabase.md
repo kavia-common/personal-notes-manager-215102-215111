@@ -10,6 +10,12 @@ Create `.env` in the `notes_frontend` directory using `.env.example`:
 - REACT_APP_SUPABASE_ANON_KEY
 - (optional) REACT_APP_FRONTEND_URL
 
+The Supabase client is initialized in `src/lib/supabaseClient.js` and read by:
+- `src/context/AuthContext.jsx`
+- `src/services/notes.js`
+
+Note: If your environment provides `REACT_APP_SUPABASE_KEY` instead of `REACT_APP_SUPABASE_ANON_KEY`, the client will accept it as a fallback, but using `REACT_APP_SUPABASE_ANON_KEY` is recommended.
+
 Example:
 ```
 REACT_APP_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
